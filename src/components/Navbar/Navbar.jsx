@@ -5,6 +5,9 @@ import logo from "../../assets/img/logo.png";
 import lang1 from "../../assets/img/langUzb.png";
 import lang2 from "../../assets/img/langEng.png";
 import lang3 from "../../assets/img/langRus.png";
+import telegram from "../../assets/img/telegram.svg";
+import download from "../../assets/img/download.svg";
+import ariza from "../../assets/img/ariza.svg";
 
 import "./navbar.scss";
 const Navbar = () => {
@@ -23,20 +26,20 @@ const Navbar = () => {
           <div className="navbar_links">
             <NavLink>
               <div className="navbar_link" onClick={handleTelegramClick}>
-                <i className="navbar_icon fa-brands fa-telegram"></i>
-                <button className="navbar_btn">Telegram</button>
+                <img src={telegram} alt="" className="navbar_icon" />
+                Telegram
               </div>
             </NavLink>
             <NavLink href="example.pdf" download>
               <div className="navbar_link">
-                <i class="fa-solid fa-download"></i>
-                <button className="navbar_btn">Taqdimot(35)</button>
+                <img src={download} alt="" className="navbar_icon" />
+                Taqdimot(35)
               </div>
             </NavLink>
             <NavLink>
               <div className="navbar_link">
-                <i class="fa-regular fa-comment-dots"></i>
-                <button className="navbar_btn">Arizangizni yuboring</button>
+                <img src={ariza} alt="" className="navbar_icon" />
+                Arizangizni yuboring
               </div>
             </NavLink>
           </div>
@@ -44,15 +47,15 @@ const Navbar = () => {
         <div className="navbar_right">
           <div className="navbar_lang">
             <img src={lang1} alt="" className="navbar_langImg" />
-            <h4 className="navbar_langText">Uz</h4>
+            <h4 className="navbar_langText">UZ</h4>
           </div>
           <div className="navbar_lang">
             <img src={lang2} alt="" className="navbar_langImg" />
-            <h4 className="navbar_langText">En</h4>
+            <h4 className="navbar_langText">EN</h4>
           </div>
           <div className="navbar_lang">
             <img src={lang3} alt="" className="navbar_langImg" />
-            <h4 className="navbar_langText">Ru</h4>
+            <h4 className="navbar_langText">RU</h4>
           </div>
         </div>
       </div>

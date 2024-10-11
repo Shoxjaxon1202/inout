@@ -14,7 +14,10 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
     "react-toastify": "^10.0.5",
-    "sass": "^1.79.4"
+    "react-typer": "^0.0.2",
+    "sass": "^1.79.4",
+    "swiper": "^11.1.14",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

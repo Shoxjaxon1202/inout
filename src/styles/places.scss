@@ -1,0 +1,51 @@
+.place {
+  width: 100%;
+  background-color: #2a3437;
+  &_wrapper {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  &_title {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 30px;
+  }
+  &_span {
+    color: #0a97bc;
+  }
+  .map {
+    width: 100%; // Bu yerda kenglikni 100% ga o'zgartirdik
+    &_item {
+      width: 100%; // Iframe ichidagi kenglikni 100% ga o'zgartirdik
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &_cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  &_card {
+    width: 230px;
+    height: 60px;
+    background-color: rgb(39, 38, 38);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    &:hover {
+      background-color: #0a97bc;
+      transition: 1s linear;
+    }
+  }
+}
