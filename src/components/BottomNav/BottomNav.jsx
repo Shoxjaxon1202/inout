@@ -57,7 +57,7 @@ const BottomNav = () => {
               <NavLink to={"/vakansiya"}>Vakansiya</NavLink>
             </li>
             <li className="bottomnav_item">
-              <NavLink to={"/reviews"}>Sharhlar</NavLink>
+              <a href="#reviews">Sharhlar</a>
             </li>
           </ul>
           <form className="bottomnav_form">
