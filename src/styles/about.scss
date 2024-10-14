@@ -1,0 +1,111 @@
+.about {
+  width: 100%;
+  &_wrapper {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px 0;
+  }
+  &_left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-items: center;
+    background: #eaf3f6;
+    background: #35454a;
+    border-radius: 12px;
+    color: #2a3437;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    gap: 10px;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: center;
+    line-height: 18px;
+    max-width: 254px;
+    padding: 14px 0;
+    width: 100%;
+  }
+  &_center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_card,
+  &_statistika {
+    width: 100%;
+    background-color: #35454a;
+    color: white;
+    border-radius: 20px;
+    padding: 50px;
+    background: #35454a;
+    border-radius: 18px;
+    box-shadow: 0 9px 18px #90adf840;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &_title {
+    font-family: "Unbounded";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 56px;
+  }
+  &_boxs {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &_box {
+    width: 30%;
+    &_title {
+      color: #fff;
+      font-family: "Unbounded";
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 35px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &_text {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  &_subtext {
+    width: 100%;
+    color: #fff;
+    font-family: Inter;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  &_span {
+    font-size: 16px;
+  }
+  &_img {
+    width: 100%;
+    transition: transform 0.3s ease; // Hover effekt uchun o'tish
+    &:hover {
+      transform: scale(0.95); // 10% ga kattalashtiradi
+    }
+  }
+  &_right {
+    border-radius: 18px;
+    box-shadow: 0 9px 18px #90adf840;
+    box-shadow: 0 9px 18px 0 var(--shadow);
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 18px;
+    width: 332px;
+    color: white;
+  }
+}

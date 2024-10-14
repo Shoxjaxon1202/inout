@@ -74,8 +74,8 @@ const Allteam = () => {
     }
   };
   return (
-    <div className="team-slider" id="allteam">
-      <div className="container">
+    <div className="team" id="allteam">
+      <div id="allteam_section" className="team_section">
         {teamMembers.map((member, index) => (
           <div key={index} className="team_member">
             <div
@@ -92,17 +92,26 @@ const Allteam = () => {
             <h3>{member.name}</h3>
             <p>{member.position}</p>
             <div className="social-links">
-              <a href={member.instagram}>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer">
                 <InstagramIcon style={{ fontSize: 30 }} />
               </a>
-              <a href={member.telegram}>
+              <a
+                href="https://t.me/yourTelegramUsername"
+                target="_blank"
+                rel="noopener noreferrer">
                 <TelegramIcon style={{ fontSize: 30 }} />
               </a>
-              <a href={member.phone}>
+              <a
+                href="tel:+1234567890"
+                target="_blank"
+                rel="noopener noreferrer">
                 <PhoneIcon style={{ fontSize: 30 }} />
               </a>
             </div>
-            <button className="rate-button btn1">Baholash</button>
+            <button className="do_btn">Baholash</button>
           </div>
         ))}
       </div>

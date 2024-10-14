@@ -90,7 +90,6 @@ const Comments = () => {
     toast.success("You comment added.");
   };
 
-  // Modal ochilganda ism maydoniga avtomatik fokus berish
   useEffect(() => {
     if (isModalOpen && nameInputRef.current) {
       nameInputRef.current.focus();

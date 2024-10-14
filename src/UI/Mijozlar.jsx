@@ -38,37 +38,59 @@ const Mijozlar = () => {
           pagination={false}
           modules={[Autoplay, FreeMode, Pagination]}
           className="mijozlar_swiper">
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://click.uz", "_blank")}>
             <img src={mijoz1} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://payme.uz", "_blank")}>
             <img src={mijoz2} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://uzum.uz", "_blank")}>
             <img src={mijoz3} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://www.fanta.com", "_blank")}>
             <img src={mijoz4} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://www.pepsi.com", "_blank")}>
             <img src={mijoz5} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://joyda.uz", "_blank")}>
             <img src={mijoz6} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://www.coca-cola.com", "_blank")}>
             <img src={mijoz7} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://www.turan-bank.uz", "_blank")}>
             <img src={mijoz8} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://teamturan.com", "_blank")}>
             <img src={mijoz9} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://www.turan.edu.kz", "_blank")}>
             <img src={mijoz10} alt="" className="mijozlar_img" />
           </SwiperSlide>
-          <SwiperSlide className="mijozlar_slide">
+          <SwiperSlide
+            className="mijozlar_slide"
+            onClick={() => window.open("https://turanlar.uz", "_blank")}>
             <img src={mijoz11} alt="" className="mijozlar_img" />
           </SwiperSlide>
         </Swiper>
