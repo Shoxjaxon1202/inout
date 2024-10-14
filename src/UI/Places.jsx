@@ -80,7 +80,12 @@ const Places = () => {
           </div>
         </div>
         <div className="video">
-          <h3 className="video_title">Video</h3>
+          <div className="video_top">
+            <h3 className="video_title">Video</h3>
+            <button className="video_btn btn">
+              <a href="/videos">Barcha Videolar</a>
+            </button>
+          </div>
           <Videos />
         </div>
       </div>

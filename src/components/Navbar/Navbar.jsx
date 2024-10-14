@@ -23,25 +23,22 @@ const Navbar = () => {
           <NavLink className="navbar_logo_link">
             <img src={logo} alt="" className="navbar_img" />
           </NavLink>
-          <div className="navbar_links">
-            <NavLink>
-              <div className="navbar_link" onClick={handleTelegramClick}>
-                <img src={telegram} alt="" className="navbar_icon" />
-                Telegram
-              </div>
-            </NavLink>
-            <NavLink href="example.pdf" download>
-              <div className="navbar_link">
-                <img src={download} alt="" className="navbar_icon" />
-                Taqdimot(35)
-              </div>
-            </NavLink>
-            <NavLink>
-              <div className="navbar_link">
-                <img src={ariza} alt="" className="navbar_icon" />
-                Arizangizni yuboring
-              </div>
-            </NavLink>
+          <div className="link">
+            <a
+              target="_blank"
+              className="link-btn one"
+              href="https://t.me/My_VALLEY">
+              <img src={telegram} alt="telegram" width="20" height="20" />
+              <p className="link-text">Telegram</p>
+            </a>
+            <button className="link-btn three">
+              <img src={download} alt="download" width="20" height="20" />
+              <p className="link-text">Taqdimot (35 mb)</p>
+            </button>
+            <a href="#registration" className="link-btn three">
+              <img src={ariza} alt="download" width="20" height="20" />
+              <p className="link-text">Arizangizni yuboring</p>
+            </a>
           </div>
         </div>
         <div className="navbar_right">

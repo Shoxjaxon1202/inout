@@ -2,7 +2,7 @@ import React from "react";
 import { ToastContainer } from "react-toastify";
 import Layout from "./components/Layout/Layout";
 
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   return (

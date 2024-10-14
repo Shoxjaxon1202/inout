@@ -44,8 +44,11 @@ const BottomNav = () => {
             <li className="bottomnav_item">
               <NavLink to={"/services"}>Xizmatlar</NavLink>
             </li>
-            <li className="bottomnav_item">
-              <NavLink to={"/about"}>Biz haqimizda</NavLink>
+            <li id="biz" className="bottomnav_item">
+              <NavLink to={"/about"}>
+                <span>Biz</span>
+                <span>haqimizda</span>
+              </NavLink>
             </li>
             <li className="bottomnav_item">
               <NavLink to={"/contact"}>Kontakt</NavLink>

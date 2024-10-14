@@ -1,38 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  // overflow: hidden; /* Scrolling'ni o'chirish */
-}
-
-.swiper {
-  width: 30vw; /* Ekranning 30% kengligi */
-  height: 40vh; /* Ekranning 40% balandligi */
-  perspective: 1500px; /* Cube effekti uchun perspektiva */
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.slide {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .play-btn {
   position: absolute;
   top: 50%;
@@ -61,6 +26,9 @@ body {
 }
 
 .intro {
+  height: 480px !important; /* Balandlikni to'liq ekranga tenglashtirish */
+  background-size: cover; /* Rasmni konteynerga moslashtirish */
+  background-position: center; /* Rasmni markazlashtirish */
   background-color: rgba(0, 0, 0, 0.7) !important; /* Shaffoflikni oshirish */
   width: 100% !important;
   background-image: url("../assets/img/bgImg.jpg");
@@ -68,9 +36,10 @@ body {
   background-size: cover;
   scroll-behavior: smooth;
   &_wrapper {
-    max-width: 1250px;
+    width: 100% !important;
+    max-width: 1250px !important;
     margin: auto;
-    height: 68vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,62 +48,85 @@ body {
     color: #fff;
     font-size: 52px;
     line-height: normal;
-    margin-right: 20px;
+    margin-right: 25px;
     text-align: left;
     width: 100%;
     font-weight: 700;
   }
-  &_texts{
+
+  .intro-container {
+    width: 80% !important;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px !important;
+  }
+
+  .intro-mySwiper {
+    width: 100% !important; /* Ekranning 80% kengligi */
+    height: 100% !important; /* Ekranning 60% balandligi */
+    border-radius: 25px !important;
+    perspective: 1500px; /* Cube effekti uchun */
+    .swiper-pagination-bullet {
+      background-color: #007bff; /* Pagination bullet rangini belgilash */
+    }
+  }
+
+  .intro-slide {
+    border-radius: 25px !important;
+
     width: 100% !important;
+    height: 100% !important; /* To'liq ekran balandligi */
+    background-size: cover; /* Rasmni konteynerga to'liq joylashtirish */
+    background-position: center; /* Rasmni markazlashtirish */
+  }
+
+  .intro-slide-content {
     position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
   }
-  &_btn {
-    margin-top: 20px;
-    position: absolute; /* Pozitsiyani aniqlash */
-    top: 140px;
-    left: 30px;
-    padding: 15px 30px; /* Tugma ichidagi bo'shliq */
-    background-color: #007bff; /* Tugma fon rangi */
-    color: #fff; /* Matn rangi */
-    border: none; /* Chegarani o'chirish */
-    border-radius: 50px; /* Tugma burchaklarini yumshatish */
-    font-size: 18px; /* Matn hajmi */
-    font-weight: bold; /* Matn qalinligi */
-    text-transform: uppercase; /* Harflarni katta qilish */
-    cursor: pointer; /* Pointer ko'rsatuvchi */
-    overflow: hidden; /* Tugma ichidagi elementlar tashqariga chiqmasligi uchun */
-    transition: background-color 0.3s ease; /* O'zgarish effektlari */
-    z-index: 1; /* Tugmani oldinga olib chiqish */
+  .intro-slide-img {
+    border-radius: 25px !important;
 
-    &::before {
-      content: ""; /* Yangi element yaratish */
-      position: absolute; /* O'z joyini aniqlash */
-      top: 50%; /* Yana markazlashtirish */
-      left: 50%; /* Yana markazlashtirish */
-      width: 300%; /* Yuqori kenglik */
-      height: 300%; /* Yuqori balandlik */
-      background-color: rgba(255, 255, 255, 0.3); /* Tugma rangiga yaqin rang */
-      border-radius: 50%; /* Tugma shakli */
-      transform: translate(-50%, -50%) scale(0); /* Boshlang'ich joylashuvi */
-      transition: transform 0.6s ease; /* O'zgarish animatsiyasi */
-      z-index: 0; /* Orqaga olib chiqish */
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .intro-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
     }
-
-    &:hover::before {
-      transform: translate(-50%, -50%) scale(1); /* Hover paytida kattalashtirish */
+    50% {
+      opacity: 0.5;
     }
-
-    &:hover {
-      background-color: #0056b3; /* Hover paytida fon rangini o'zgartirish */
-    }
-
-    &:active {
-      transform: scale(0.95); /* Tugma bosilganda o'lchamini kichraytirish */
+    100% {
+      opacity: 1;
     }
   }
-}
 
+  .intro-play-icon {
+    width: 50px;
+    height: 50px;
+    color: white;
+  }
 
-.mySwiper2{
-    width: 750px;
+  .slider,
+  .slider * {
+    pointer-events: all; /* Slayder elementlarining hammasiga interaktivlik berish */
+  }
 }

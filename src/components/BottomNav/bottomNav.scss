@@ -13,7 +13,7 @@
   &_list {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     a {
       color: white;
     }
@@ -29,24 +29,35 @@
     gap: 40px;
   }
   &_contact {
+    margin-left: 20px;
+
     display: flex;
     align-items: start;
     flex-direction: column;
     gap: 10px;
   }
   &_card {
+    min-width: 180px;
     display: flex;
     align-items: center;
     gap: 7px;
   }
+  #biz {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
   &_item {
     a {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 500;
       line-height: 19px;
+
       &:hover {
         transition: all 0.5s;
-        color: #009bff; 
+        color: #009bff;
       }
     }
   }
@@ -59,6 +70,7 @@
     }
   }
   &_input {
+    animation: glow 3s linear infinite;
     border: none;
     background: hsla(0, 0%, 100%, 0.1);
     padding: 12px 19px 12px 40px;
@@ -67,7 +79,7 @@
     border-radius: 20px;
   }
   &_title {
-    font-size: 18px;
+    font-size: 13px;
     cursor: pointer;
     a {
       color: white;
@@ -93,5 +105,22 @@
     width: 40px;
     padding: 10px;
     border-radius: 10px;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #4e7cf0;
+    background-color: #1e2d36;
+  }
+  50% {
+    box-shadow: 0 0 10px 10px #4e7cf0;
+    background-color: #162d38;
+
+  }
+  to {
+    box-shadow: 0 0 10px -10px #4e7cf0;
+    background-color: #1a313f;
+
   }
 }

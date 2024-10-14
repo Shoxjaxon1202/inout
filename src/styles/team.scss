@@ -1,0 +1,104 @@
+.team {
+  background-color: #2c3e50; // Fon rangi
+  width: 100%;
+}
+.team_text {
+  font-size: 18px;
+  color: #b5b5b5;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.team_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: start;
+  padding: 20px 0;
+}
+.team_section {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  max-width: 1250px;
+  margin: auto;
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff; // Sarlavha rangi
+  }
+  .team_swiper {
+    width: 100%;
+    height: 450px;
+  }
+  .team_member {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #0a2b38; // A'zolarning kartasi
+    border-radius: 20px;
+    padding: 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05); // Hover effekt
+    }
+
+    .member_image {
+      margin-top: 10px;
+      width: 150px !important;
+      height: 150px !important;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    .social_icons {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      gap: 5px;
+      margin: 15px 0;
+
+      .social_icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        text-decoration: none;
+        fill: white;
+
+        font-size: 25px;
+        fill: white;
+        &:hover {
+          transition: 0.3s linear;
+          fill: #1abc9c;
+        }
+      }
+    }
+
+    .rate_button {
+      background-color: #1abc9c;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #16a085; // Hover effekt
+      }
+    }
+  }
+}
+
+#team_btn {
+  width: 100% !important;
+}

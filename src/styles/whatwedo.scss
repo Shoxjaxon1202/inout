@@ -1,0 +1,135 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.do {
+  width: 100%;
+  background-color: #2a3437;
+
+  &_wrapper {
+    max-width: 1250px;
+    margin: auto;
+  }
+
+  &_title {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 32px;
+    padding-top: 50px;
+  }
+
+  &_btn {
+    margin-top: 30px;
+    background-color: transparent;
+    border: 1px solid #0a97bc;
+    border-radius: 12px;
+    color: #0a97bc;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600; // 600px emas, faqat 600 bo'lishi kerak
+    min-width: 135px;
+    padding: 15px 20px !important;
+    text-align: center;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: #0a97bc;
+      color: white;
+      transition: 0.4s linear;
+    }
+  }
+
+  &_img {
+    max-width: 90% !important;
+    width: 90% !important;
+    height: 350px !important;
+    border-radius: 20px;
+  }
+}
+
+.customSwiper {
+  display: flex;
+  gap: 40px; // Ekrandagi slide'lar orasidagi masofani boshqarish
+}
+
+.customSlide {
+  margin-bottom: 50px;
+  text-align: start;
+  font-size: 18px;
+  background: #1d2e34;
+  width: 100%; // Har bir slide to'liq kenglikni egallashi uchun
+  // height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_right {
+    box-sizing: border-box !important;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    border-radius: 20px !important;
+    gap: 10px;
+    color: white;
+    background-color: #1d2e34;
+    padding: 15px 30px 15px 15px;
+    width: 50% !important; // O'ng tarafga to'g'ri kenglik
+    height: 250px; // Barcha slide'lar uchun bir xil balandlik
+    max-height: 250px; // O'lchovni cheklash
+  }
+  &_left {
+    width: 50%;
+    height: 100%;
+  }
+  &_subtitle {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  &_subtext {
+    text-align: start !important;
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 12px;
+  }
+}

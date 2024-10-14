@@ -1,6 +1,6 @@
 .place {
   width: 100%;
-  background-color: #2a3437;
+  // background-color: #2c3e50; // Fon rangi
   &_wrapper {
     max-width: 1250px;
     margin: auto;
@@ -8,6 +8,7 @@
     flex-direction: column;
   }
   &_title {
+    margin-top: 50px;
     color: white;
     font-size: 32px;
     font-weight: 700;
@@ -36,16 +37,75 @@
   &_card {
     width: 230px;
     height: 60px;
-    background-color: rgb(39, 38, 38);
+    background-color: rgba(144, 173, 248, 0.25);
     display: flex;
     align-items: center;
     gap: 10px;
     color: white;
     border-radius: 20px;
     padding: 10px 20px;
+    cursor: pointer;
     &:hover {
       background-color: #0a97bc;
-      transition: 1s linear;
+      transition: 0.5s linear;
     }
+  }
+}
+
+@keyframes anim {
+  0% {
+    display: flex;
+    transform: rotate(40deg);
+  }
+
+  to {
+    display: none;
+    left: 300%;
+    transform: rotate(40deg);
+  }
+}
+
+.place_cards {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+
+  .place_card {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+    padding: 9px 24px 9px 18px;
+    position: relative;
+
+    &::after {
+      animation: anim 3s ease infinite;
+      background: #0a97bc;
+      background: var(--prColor);
+      box-shadow: 50px 75px 100px 50px #0a97bc;
+      box-shadow: 50px 75px 100px 50px var(--prColor);
+      content: "";
+      height: 40px;
+      left: -300%;
+      position: absolute;
+      top: -50px;
+      transition: 0.2s ease;
+      width: 40px;
+      z-index: 1;
+    }
+
+    .place-text {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  .place-btn.one {
+    animation-delay: 0.5s;
+  }
+
+  .place-btn.three {
+    animation-delay: 1s;
   }
 }
