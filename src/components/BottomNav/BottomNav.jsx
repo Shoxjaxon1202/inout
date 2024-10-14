@@ -85,7 +85,10 @@ const BottomNav = () => {
           </div>
           <div className="bottomnav_modes">
             <img src={sun} alt="" className="bottomnav_mode" />
-            <img src={like} alt="" className="bottomnav_mode" />
+            <NavLink to={"/likes"}>
+            
+              <img src={like} alt="" className="bottomnav_mode" />
+            </NavLink>
           </div>
         </div>
       </div>

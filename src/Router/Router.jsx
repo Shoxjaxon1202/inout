@@ -9,6 +9,8 @@ import Reviews from "../Pages/Reviews";
 import NotFound from "../Pages/NotFound";
 import Videos from "../UI/Videos";
 import Allteam from "../UI/AllTeam";
+import Likes from "../UI/Likes";
+
 const Router = () => {
   return (
     <Routes>
@@ -19,6 +21,7 @@ const Router = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/vakansiya" element={<Vakansiya />} />
       <Route path="/allteam" element={<Allteam />} />
+      <Route path="/likes" element={<Likes />} />
       <Route
         path="/videos"
         element={

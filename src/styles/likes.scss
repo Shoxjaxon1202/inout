@@ -1,0 +1,22 @@
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  font-weight: 400;
+  color: white;
+  flex-direction: column;
+  gap: 30px;
+  .smile {
+    font-size: 32px;
+    line-height: normal;
+    text-align: center;
+    color: hsla(0, 0%, 100%, 0.8);
+  }
+  &_title {
+    font-size: 32px;
+    line-height: normal;
+    text-align: center;
+    color: hsla(0, 0%, 100%, 0.8);
+  }
+}
