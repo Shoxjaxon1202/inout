@@ -15,6 +15,7 @@ import rasm6 from "../assets/img/qizlar6.jpg";
 
 import { useTranslation } from "react-i18next";
 import "../styles/team.scss";
+import { Instagram, Phone, Telegram } from "@mui/icons-material";
 
 const teamMembers = [
   {
@@ -84,13 +85,13 @@ export default function Team() {
               <p>{member.role}</p>
               <div className="social_icons">
                 <a href="#intro" className="social_icon">
-                  {/* SVG code here */}
+                  <Instagram />
                 </a>
                 <a href="#intro" className="social_icon">
-                  {/* SVG code here */}
+                  <Telegram />
                 </a>
                 <a href="#intro" className="social_icon">
-                  {/* SVG code here */}
+                  <Phone />
                 </a>
               </div>
               <button id="team_btn" className="do_btn">

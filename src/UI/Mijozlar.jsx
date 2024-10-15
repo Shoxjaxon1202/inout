@@ -29,7 +29,9 @@ const Mijozlar = () => {
             <p className="mijozlar_text">{t("mijozlar_text")}</p>
           </div>
           <div className="mijozlar_top_right">
-            <button className="video_btn">{t("video_btn")}</button>
+            <a href="#intro">
+              <button className="video_btn">{t("video_btn")}</button>
+            </a>
           </div>
         </div>
         <Swiper
