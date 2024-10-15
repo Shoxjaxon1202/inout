@@ -1,6 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+const savedLanguage = localStorage.getItem("language") || "uz";
 i18n.use(initReactI18next).init({
   resources: {
     uz: {
@@ -476,6 +477,7 @@ i18n.use(initReactI18next).init({
       },
     },
   },
+  lng: savedLanguage, // Olingan tilni initializatsiya qilamiz
   fallbackLng: "uz",
   debug: true,
   interpolation: {

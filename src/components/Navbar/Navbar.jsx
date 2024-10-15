@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // i18next dan foydalanish
+import { useTranslation } from "react-i18next";
 
 import logo from "../../assets/img/logo.png";
 import lang1 from "../../assets/img/langUzb.png";
@@ -14,10 +14,19 @@ import "./navbar.scss";
 import "../../i18n"; // i18n konfiguratsiyasini import qilish
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation(); // tilni olish va o'zgartirish
+  const { t, i18n } = useTranslation();
+
+  // Foydalanuvchining oxirgi tanlangan tilini localStorage dan olish
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    }
+  }, [i18n]);
 
   const handleLanguageChange = (lng) => {
     i18n.changeLanguage(lng);
+    localStorage.setItem("language", lng); // Tanlangan tilni localStorage ga saqlash
   };
 
   const handleTelegramClick = () => {
@@ -29,25 +38,25 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar_wrapper">
         <div className="navbar_left">
-          <NavLink className="navbar_logo_link">
+          <NavLink to="/" className="navbar_logo_link">
             <img src={logo} alt="" className="navbar_img" />
           </NavLink>
           <div className="link">
-            <a
+            <NavLink
+              to="https://t.me/My_VALLEY"
               target="_blank"
-              className="link-btn one"
-              href="https://t.me/My_VALLEY">
+              className="link-btn one">
               <img src={telegram} alt="telegram" width="20" height="20" />
               <p className="link-text">{t("telegram")}</p>
-            </a>
-            <button className="link-btn three">
+            </NavLink>
+            <button className="link-btn three" onClick={handleTelegramClick}>
               <img src={download} alt="download" width="20" height="20" />
               <p className="link-text">{t("download")}</p>
             </button>
-            <a href="#registration" className="link-btn three">
+            <NavLink to="#registration" className="link-btn three">
               <img src={ariza} alt="download" width="20" height="20" />
               <p className="link-text">{t("apply")}</p>
-            </a>
+            </NavLink>
           </div>
         </div>
         <div className="navbar_right">
