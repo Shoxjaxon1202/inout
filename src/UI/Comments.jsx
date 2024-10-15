@@ -3,15 +3,14 @@ import Slider from "react-slick";
 import { IconButton } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import StarIcon from "@mui/icons-material/Star";
-
 import "../styles/comments.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import qiz1 from "../assets/img/qizlar1.jpg";
 import qiz2 from "../assets/img/qizlar2.jpg";
 import qiz3 from "../assets/img/qizlar3.png";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 
 const initialCommentsData = [
   {
@@ -26,20 +25,21 @@ const initialCommentsData = [
     id: 2,
     name: "Alisa",
     date: "12.09.2023 13:05",
-    comment: "Foydali xizmatlaringiz uchun raxmat",
+    comment: "Foydali xizmatlaringiz uchun rahmat",
     rating: 5,
     avatar: qiz2,
   },
   {
     id: 3,
     name: "Mira",
-    comment: "Alo darajadagi xizmat uchun rahmat",
+    comment: "A'lo darajadagi xizmat uchun rahmat",
     rating: 4,
     avatar: qiz3,
   },
 ];
 
 const Comments = () => {
+  const { t } = useTranslation(); // useTranslation yordamida t funksiyasini oling
   const [commentsData, setCommentsData] = useState(initialCommentsData);
   const [isModalOpen, setModalOpen] = useState(false);
   const [newComment, setNewComment] = useState({
@@ -47,7 +47,6 @@ const Comments = () => {
     comment: "",
     rating: 0,
   });
-  const nameInputRef = useRef(null); // ref ni yaratamiz
 
   const settings = {
     dots: false,
@@ -87,27 +86,23 @@ const Comments = () => {
     setCommentsData([...commentsData, newCommentData]);
     setNewComment({ name: "", comment: "", rating: 0 });
     closeModal();
-    toast.success("You comment added.");
+    toast.success(t("comments.success_message")); // translate success message
   };
-
-  useEffect(() => {
-    if (isModalOpen && nameInputRef.current) {
-      nameInputRef.current.focus();
-    }
-  }, [isModalOpen]);
 
   return (
     <div className="comments" id="reviews">
       <div className="comments_container">
         <div className="comments__flex">
           <h2 className="comments__title">
-            <span className="comments__title--highlight">Sharhlar</span> Biz
-            haqimizda
+            <span className="comments__title--highlight">
+              {t("comments.title")}
+            </span>{" "}
+            {t("comments.about_us")}
           </h2>
 
           <button onClick={openModal} className="video_btn">
             <EditNoteIcon />
-            Sharh yozish
+            {t("comments.write_review")}
           </button>
         </div>
         <Slider {...settings}>
@@ -145,21 +140,20 @@ const Comments = () => {
               <button className="comments__modal-close" onClick={closeModal}>
                 &times;
               </button>
-              <h2>Sharh yozish</h2>
+              <h2>{t("comments.modal_title")}</h2>
               <form onSubmit={handleSubmit}>
                 <label>
-                  Ismingiz
+                  {t("comments.name_label")}
                   <input
                     type="text"
                     name="name"
                     value={newComment.name}
                     onChange={handleInputChange}
-                    ref={nameInputRef} // ref ni qo'shamiz
                     required
                   />
                 </label>
                 <label>
-                  Baholash
+                  {t("comments.rating_label")}
                   <div className="comments__rating-input">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <StarIcon
@@ -174,14 +168,14 @@ const Comments = () => {
                   </div>
                 </label>
                 <label>
-                  Fikringiz
+                  {t("comments.comment_label")}
                   <textarea
                     name="comment"
                     value={newComment.comment}
                     onChange={handleInputChange}
                     required></textarea>
                 </label>
-                <button type="submit">Yuborish</button>
+                <button type="submit">{t("comments.submit_button")}</button>
               </form>
             </div>
           </div>

@@ -1,0 +1,77 @@
+.statistics-container {
+  padding-bottom: 50px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto; // Center the container
+
+  .statistics-wrapper {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .statistics-bottom {
+    width: 60%;
+    background-color: #2e3b4e;
+    border-radius: 20px;
+    padding: 40px;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .logo {
+      font-size: 3rem;
+      color: #fff;
+      display: flex;
+      align-items: baseline;
+
+      span {
+        color: #00bfff; // Blue color for "out"
+      }
+    }
+  }
+
+  .statistics-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start !important;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+
+    h1 {
+      margin-top: 10px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .statistics-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .card {
+      border-radius: 8px;
+      padding: 20px;
+      text-align: start;
+      //   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        display: flex;
+        font-size: 3rem;
+        color: #fff;
+      }
+
+      p {
+        font-size: 0.8rem;
+        margin-top: 20px;
+        color: #fff;
+      }
+    }
+  }
+}

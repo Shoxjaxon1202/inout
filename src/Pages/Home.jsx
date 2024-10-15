@@ -7,6 +7,7 @@ import Counts from "../UI/Counts";
 import Mijozlar from "../UI/Mijozlar";
 import Contact from "./Contact";
 import Comments from "../UI/Comments";
+import AboutCount from "../UI/AboutCount";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Counts />
       <Mijozlar />
       <Contact />
+      <AboutCount/>
       <Comments />
     </main>
   );

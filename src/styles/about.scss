@@ -28,6 +28,11 @@
     max-width: 254px;
     padding: 14px 0;
     width: 100%;
+    &_display{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   }
   &_center {
     width: 100%;

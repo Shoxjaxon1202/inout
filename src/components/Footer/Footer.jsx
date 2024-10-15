@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/footer.scss";
 import { AccessTime, LocationOn, Email } from "@mui/icons-material";
+import { useTranslation } from "react-i18next"; // i18n kutubxonasini import qilish
 
 import discord from "../../assets/img/discord.png";
 import Telegram from "../../assets/img/telegramrasm.png";
@@ -14,6 +15,8 @@ import logo from "../../assets/img/footer.png";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const { t } = useTranslation(); // i18n funksiyasini olish
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -26,7 +29,7 @@ const Footer = () => {
               <div className="footer__info-item">
                 <AccessTime className="footer__info-icon" />
                 <p>
-                  9:00-17:00 <br /> du-ju
+                  {t("time")} <br /> du-ju
                 </p>
               </div>
               <div className="footer__info-item">
@@ -35,7 +38,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer">
                   <LocationOn className="footer__info-icon" />
-                  <p>O'zbekiston barcha hududlarda</p>
+                  <p>{t("location")}</p>
                 </a>
               </div>
               <div className="footer__info-item">
@@ -49,7 +52,7 @@ const Footer = () => {
                 </p>
               </div>
               <div className="footer__info-item">
-                <p>Bizning ijtimoiy tarmoqlarimiz</p>
+                <p>{t("social_media")}</p>
                 <div className="footer__socials">
                   <a
                     href="https://t.me/yourtelegramchannel"
@@ -102,10 +105,10 @@ const Footer = () => {
           <NavLink to={"/"}>
             <img src={logo} alt="Logo" className="footer__logo-img1" />
           </NavLink>
-          <p>Inout jamoasi</p>
+          <p>{t("team_name")}</p>
           <p>
-            Mualliflik © huquqi 2014-{new Date().getFullYear()} Barcha huquqlar
-            himoyalangan
+            {t("copyright")} © {new Date().getFullYear()}{" "}
+            {t("all_rights_reserved")}
           </p>
         </div>
       </div>

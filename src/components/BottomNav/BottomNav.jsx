@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // i18n kutubxonasini import qilish
 
 import "./bottomNav.scss";
-import { NavLink } from "react-router-dom";
-
 import search from "../../assets/img/search.svg";
 import time from "../../assets/img/time.svg";
 import tel from "../../assets/img/tel.svg";
@@ -13,14 +13,11 @@ import like from "../../assets/img/likeIcon.svg";
 const BottomNav = () => {
   const inputEl = useRef(null);
   let typed = useRef(null);
+  const { t } = useTranslation(); // i18n funksiyasini olish
 
   useEffect(() => {
     const options = {
-      strings: [
-        "Avtobuslarda reklama",
-        "LED ekranlarda reklama",
-        "Bilboardlarda reklama",
-      ],
+      strings: [t("avtobus"), t("led"), t("bilboard")],
       typeSpeed: 80,
       backSpeed: 50,
       loop: true,
@@ -31,7 +28,7 @@ const BottomNav = () => {
     return () => {
       typed.current.destroy(); // Component unmounted bo'lganda o'chirish
     };
-  }, []);
+  }, [t]);
 
   return (
     <div className="bottomnav">
@@ -39,25 +36,25 @@ const BottomNav = () => {
         <div className="bottomnav_left">
           <ul className="bottomnav_list">
             <li className="bottomnav_item">
-              <NavLink to={"/home"}>Asosiy</NavLink>
+              <NavLink to={"/home"}>{t("asosiy")}</NavLink>
             </li>
             <li className="bottomnav_item">
-              <NavLink to={"/services"}>Xizmatlar</NavLink>
+              <NavLink to={"/services"}>{t("xizmatlar")}</NavLink>
             </li>
             <li id="biz" className="bottomnav_item">
               <NavLink to={"/about"}>
-                <span>Biz</span>
-                <span>haqimizda</span>
+                <span>{t("biz")}</span>
+                <span>{t("haqimizda")}</span>
               </NavLink>
             </li>
             <li className="bottomnav_item">
-              <NavLink to={"/contact"}>Kontakt</NavLink>
+              <NavLink to={"/contact"}>{t("kontakt")}</NavLink>
             </li>
             <li className="bottomnav_item">
-              <NavLink to={"/vakansiya"}>Vakansiya</NavLink>
+              <NavLink to={"/vakansiya"}>{t("vakansiya")}</NavLink>
             </li>
             <li className="bottomnav_item">
-              <a href="#reviews">Sharhlar</a>
+              <a href="#reviews">{t("sharhlar")}</a>
             </li>
           </ul>
           <form className="bottomnav_form">
@@ -66,7 +63,7 @@ const BottomNav = () => {
               type="text"
               className="bottomnav_input"
               ref={inputEl}
-              placeholder="Bu yerda reklama turi..."
+              placeholder={t("placeholder")} // placeholder uchun tarjima
             />
           </form>
         </div>
@@ -74,7 +71,7 @@ const BottomNav = () => {
           <div className="bottomnav_contact">
             <div className="bottomnav_card">
               <img src={time} alt="" className="bottomnav_icon" />
-              <h4 className="bottomnav_title">9:00-17:00 du-ju</h4>
+              <h4 className="bottomnav_title">{t("time")}</h4>
             </div>
             <div className="bottomnav_card">
               <img src={tel} alt="" className="bottomnav_icon" />
@@ -86,7 +83,6 @@ const BottomNav = () => {
           <div className="bottomnav_modes">
             <img src={sun} alt="" className="bottomnav_mode" />
             <NavLink to={"/likes"}>
-            
               <img src={like} alt="" className="bottomnav_mode" />
             </NavLink>
           </div>

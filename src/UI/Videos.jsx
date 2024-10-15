@@ -4,7 +4,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../styles/videos.scss";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
+import { useTranslation } from "react-i18next"; // useTranslation ni import qilish
 
 import rasm1 from "../assets/img/opa.jpg";
 import rasm2 from "../assets/img/opa.jpg";
@@ -18,6 +19,7 @@ import rasm8 from "../assets/img/opa.jpg";
 import videoFile from "../assets/img/video.mp4"; // Videoni import qilish
 
 export default function Videos() {
+  const { t } = useTranslation(); // useTranslation dan foydalanish
   const [isPlaying, setIsPlaying] = useState(new Array(8).fill(false)); // Barcha slaydlar uchun holat
   const swiperRef = useRef(null); // Swiperga referens
 
@@ -57,10 +59,9 @@ export default function Videos() {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        pagination={false}
         loop={true}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Navigation]}
         className="videos-swiper">
         {[rasm1, rasm2, rasm3, rasm4, rasm5, rasm6, rasm7, rasm8].map(
           (image, index) => (

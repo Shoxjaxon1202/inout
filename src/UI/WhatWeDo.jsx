@@ -1,15 +1,10 @@
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import "../styles/whatwedo.scss"; // CSS faylini import qiling
-
-// Import required modules
+import "../styles/whatwedo.scss";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import rasm1 from "../assets/img/nima1.jpeg";
@@ -20,10 +15,16 @@ import rasm5 from "../assets/img/nima5.jpg";
 import rasm7 from "../assets/img/nima7.jpg";
 
 export default function WhatWeDo() {
+  const { t } = useTranslation();
+
+  const slides = t("slides", { returnObjects: true });
+
+  const images = [rasm1, rasm2, rasm3, rasm4, rasm5, rasm7];
+
   return (
     <div className="do">
       <div className="do_wrapper">
-        <h3 className="do_title">Biz nima qilamiz?</h3>
+        <h3 className="do_title">{t("title")}</h3>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -34,85 +35,18 @@ export default function WhatWeDo() {
           pagination={false}
           navigation={false}
           modules={[Autoplay, Pagination, Navigation]}>
-          <SwiperSlide className="customSlide">
-            <div className="customSlide_left">
-              <img src={rasm1} alt="" className="do_img" />
-            </div>
-            <div className="customSlide_right">
-              <h4 className="do_subtitle">Avtobusda tashqi tomon</h4>
-              <p className="do_subtext">
-                Shaxar Avtobuslarining tashqi tomoniga raklaangizni joylashtirib
-                beraiz...
-              </p>
-              <button className="do_btn">Ko'proq</button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="customSlide">
-            <div className="customSlide_left">
-              <img src={rasm2} alt="" className="do_img" />
-            </div>
-            <div className="customSlide_right">
-              <h4 className="do_subtitle">LED ekranlarda reklama</h4>
-              <p className="do_subtext">
-                Lorem Ipsum matbaa va matn terish sanoatining oddiygina soxta
-                matnidir. Lorem Ipsum sanoat bo'lgan ...
-              </p>
-              <button className="do_btn">Ko'proq</button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="customSlide">
-            <div className="customSlide_left">
-              <img src={rasm3} alt="" className="do_img" />
-            </div>
-            <div className="customSlide_right">
-              <h4 className="do_subtitle">Reklama xizmati</h4>
-              <p className="do_subtext">
-                Komponiya tashqi reklama sohasida eng katta ko'lmi xizmatlarni
-                taqdim etishga, poligrafiya va...
-              </p>
-              <button className="do_btn">Ko'proq</button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="customSlide">
-            <div className="customSlide_left">
-              <img src={rasm4} alt="" className="do_img" />
-            </div>
-            <div className="customSlide_right">
-              <h4 className="do_subtitle">HD Ekran</h4>
-              <p className="do_subtext">
-                Z-Edge 4K monitor, U28I4K 28 dyuymli IPS monitor Ultra HD
-                3840x2160 IPS yangilanish...
-              </p>
-              <button className="do_btn">Ko'proq</button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="customSlide">
-            <div className="customSlide_left">
-              <img src={rasm5} alt="" className="do_img" />
-            </div>
-            <div className="customSlide_right">
-              <h4 className="do_subtitle">4K Monitor</h4>
-              <p className="do_subtext">
-                Z-Edge U27P4K 27-дюймовый игровой монитор Ultra HD 4K, частота
-              </p>
-              <button className="do_btn">Ko'proq</button>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide className="customSlide">
-            <div className="customSlide_left">
-              <img src={rasm7} alt="" className="do_img" />
-            </div>
-            <div className="customSlide_right">
-              <h4 className="do_subtitle">Salom Dunyo</h4>
-              <p className="do_subtext">
-                In fiction, the planet Mars, fourth from the Sun, has appeared
-                as a setting in at least 5,000 works...
-              </p>
-              <button className="do_btn">Ko'proq</button>
-            </div>
-          </SwiperSlide>
-         
+          {slides.map((slide, index) => (
+            <SwiperSlide className="customSlide" key={index}>
+              <div className="customSlide_left">
+                <img src={images[index]} alt="" className="do_img" />
+              </div>
+              <div className="customSlide_right">
+                <h4 className="do_subtitle">{slide.subtitle}</h4>
+                <p className="do_subtext">{slide.text}</p>
+                <button className="do_btn">{slide.button}</button>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

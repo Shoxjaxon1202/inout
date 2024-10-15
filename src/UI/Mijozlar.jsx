@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/mijozlar.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 
 import mijoz1 from "../assets/img/mijozlar1.jpg";
 import mijoz2 from "../assets/img/mijozlar2.png";
@@ -15,19 +16,20 @@ import mijoz10 from "../assets/img/mijozlar10.jpeg";
 import mijoz11 from "../assets/img/mijozlar11.png";
 
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+
 const Mijozlar = () => {
+  const { t } = useTranslation(); // useTranslation dan foydalanish
+
   return (
     <div className="mijozlar">
       <div className="mijozlar_wrapper">
         <div className="mijozlar_top">
           <div className="mijozlar_top_left">
-            <h2 className="mijozlar_title">Ishonchli mijozlar</h2>
-            <p className="mijozlar_text">
-              Davom etilmoqda... Sizning logoyingiz uchun ham joy mavjud
-            </p>
+            <h2 className="mijozlar_title">{t("mijozlar_title")}</h2>
+            <p className="mijozlar_text">{t("mijozlar_text")}</p>
           </div>
           <div className="mijozlar_top_right">
-            <button className="video_btn">Mijoz bo'lish</button>
+            <button className="video_btn">{t("video_btn")}</button>
           </div>
         </div>
         <Swiper
