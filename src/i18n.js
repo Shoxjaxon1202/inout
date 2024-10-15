@@ -160,6 +160,7 @@ i18n.use(initReactI18next).init({
         vakansiya_experience: "3 yillik tajriba",
         vakansiya_logistician: "Logist",
         vakansiya_more: "Ko'proq",
+        noDataMessage: "Ushbu bo'limda hali hech qanday ma'lumot yo'q.",
       },
     },
     en: {
@@ -317,6 +318,7 @@ i18n.use(initReactI18next).init({
         vakansiya_experience: "3 years of experience",
         vakansiya_logistician: "Logistician",
         vakansiya_more: "More",
+        noDataMessage: "There is currently no information in this section.",
       },
     },
     ru: {
@@ -474,6 +476,7 @@ i18n.use(initReactI18next).init({
         vakansiya_experience: "3 года опыта",
         vakansiya_logistician: "Логист",
         vakansiya_more: "Подробнее",
+        noDataMessage: "В этом разделе пока нет информации.",
       },
     },
   },
