@@ -3,8 +3,8 @@
 }
 .services {
   background-color: #18262f !important;
-  .do{
-    background-color: #18262f ;
+  .do {
+    background-color: #18262f;
   }
 }
 html,
@@ -131,8 +131,9 @@ body {
     line-height: 22px;
   }
 
-  &_subtext {
+  .do_subtext {
     text-align: start !important;
+    line-height: 20px !important;
     color: hsla(0, 0%, 100%, 0.8);
     font-size: 14px;
     line-height: 18px;

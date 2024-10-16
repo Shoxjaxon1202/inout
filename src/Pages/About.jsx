@@ -11,6 +11,47 @@ import vk from "../assets/img/vk.png";
 import logo from "../assets/img/about.png";
 import "../styles/about.scss";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
+const CountCard = ({ maxCount, text }) => {
+  const [count, setCount] = useState(0);
+  const { ref, inView } = useInView({
+    threshold: 0.05, // 5% dan kam ko'rinishi kerak
+  });
+
+  useEffect(() => {
+    if (inView) {
+      let duration = 2000; // 2 soniya
+      let increment = maxCount / (duration / 50); // Sonning kattaligiga qarab tezlik
+      let interval = setInterval(() => {
+        setCount((prevCount) => {
+          if (prevCount < maxCount) {
+            return Math.min(prevCount + increment, maxCount);
+          } else {
+            clearInterval(interval);
+            return maxCount;
+          }
+        });
+      }, 50); // 50ms tezlik bilan sanaydi
+
+      return () => clearInterval(interval); // Oldingi intervalni to'xtatadi
+    } else {
+      setCount(0);
+    }
+  }, [inView, maxCount]);
+
+  const formattedCount = new Intl.NumberFormat().format(Math.floor(count));
+
+  return (
+    <div className="about_box" ref={ref}>
+      <h2 className="about_box_title">
+        {formattedCount} <span className="place_span">+</span>
+      </h2>
+      <p className="about_subtext">{text}</p>
+    </div>
+  );
+};
 
 const About = () => {
   const { t } = useTranslation();
@@ -28,55 +69,33 @@ const About = () => {
           <img src={logo} alt="" className="about_img" />
           <div className="about_card">
             <h3 className="about_title">{t("about.title")}</h3>
-
             <p className="about_text">{t("about.text1")}</p>
             <p className="about_text">{t("about.text2")}</p>
           </div>
           <div className="about_statistika">
-            <h3 className="about_title">{t("about.statistics.title")}</h3>
+            <h3 className="about_title">{t("about.title")}</h3>
             <div className="about_boxs">
-              <div className="about_box">
-                <h2 className="about_box_title">
-                  3 <span className="place_span">+</span>{" "}
-                </h2>
-                <p className="about_subtext">{t("about.statistics.success")}</p>
-              </div>
-              <div className="about_box">
-                <h2 className="about_box_title">24</h2>
-                <p className="about_subtext">
-                  {t("about.statistics.employees")}
-                </p>
-              </div>
-              <div className="about_box">
-                <h2 className="about_box_title">138</h2>
-                <p className="about_subtext">
-                  {t("about.statistics.socialsPromoted")}
-                </p>
-              </div>
-              <div className="about_box">
-                <h2 className="about_box_title">336</h2>
-                <p className="about_subtext">
-                  {t("about.statistics.developedLaunched")}
-                </p>
-              </div>
-              <div className="about_box">
-                <h2 className="about_box_title">53</h2>
-                <p className="about_subtext">
-                  {t("about.statistics.socialsPromoted")}
-                </p>
-              </div>
-              <div className="about_box">
-                <h2 className="about_box_title">218</h2>
-                <p className="about_subtext">
-                  {t("about.statistics.products")}
-                </p>
-              </div>
+              <CountCard maxCount={3} text={t("about.statistics.success")} />
+              <CountCard maxCount={24} text={t("about.statistics.employees")} />
+              <CountCard
+                maxCount={138}
+                text={t("about.statistics.socialsPromoted")}
+              />
+              <CountCard
+                maxCount={336}
+                text={t("about.statistics.developedLaunched")}
+              />
+              <CountCard
+                maxCount={53}
+                text={t("about.statistics.socialsPromoted")}
+              />
+              <CountCard maxCount={218} text={t("about.statistics.products")} />
             </div>
           </div>
         </div>
         <div className="about_right">
           <div className="footer__info-item">
-            <p>{t("about.contacts")}</p>
+            <p>{t("social_media")}</p>
             <div className="footer__socials">
               <a href="https://www.instagram.com/" target="_blank">
                 <img src={Instagram} alt="Instagram" />

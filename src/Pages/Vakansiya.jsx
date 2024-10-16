@@ -17,7 +17,9 @@ const Vakansiya = () => {
               <span className="vakansiya_span">✓ </span>
               {t("vakansiya_education")}
             </p>
-            <button className="video_btn">{t("vakansiya_more")}</button>
+            <a href="https:hh.uz" target="_blank" >
+              <button className="video_btn">{t("vakansiya_more")}</button>
+            </a>
           </div>
           <div className="vakansiya_card">
             <h4 className="vakansiya_subtitle">{t("vakansiya_webDesigner")}</h4>
@@ -26,7 +28,9 @@ const Vakansiya = () => {
               <span className="vakansiya_span">✓ </span>
               {t("vakansiya_experience")}
             </p>
-            <button className="video_btn">{t("vakansiya_more")}</button>
+            <a href="https:ishkop.uz" target="_blank" >
+              <button className="video_btn">{t("vakansiya_more")}</button>
+            </a>
           </div>
           <div className="vakansiya_card">
             <h4 className="vakansiya_subtitle">{t("vakansiya_logistician")}</h4>
@@ -34,7 +38,9 @@ const Vakansiya = () => {
             <p className="vakansiya_subtext">
               <span className="vakansiya_span">✓ </span>dddddd
             </p>
-            <button className="video_btn">{t("vakansiya_more")}</button>
+            <a href="https:olx.uz" target="_blank" >
+              <button className="video_btn">{t("vakansiya_more")}</button>
+            </a>
           </div>
         </div>
       </div>

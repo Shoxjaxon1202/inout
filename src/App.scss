@@ -1,7 +1,68 @@
 #routes {
   margin: auto;
-  background-color: #18262f !important;
+  background-color: #18262f;
   min-height: 60vh;
+}
+
+.darkmode {
+  background: #fff !important; // Tun rejimi uchun fon rangi
+  color: #2a3437 !important; // Text rangi oq
+
+  a {
+    color: rgb(27, 25, 25) !important; // Contact bo'limidagi matn rangi oq
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a {
+    color: rgb(27, 25, 25) !important; // Contact bo'limidagi matn rangi oq
+  }
+  .do,
+  .team,
+  .counts,
+  .mijozlar,
+  .contact-page,
+  .statistics-container,
+  .comments,
+  .footer,
+  .about,
+  .vakansiya {
+    input,
+    textarea {
+      background-color: #fff;
+      color: black;
+      border: 1px solid black;
+    }
+    background-color: #fff;
+    div {
+      background-color: #fff !important;
+    }
+  }
+  .place_card{
+    color: #18262f;
+  }
+  .bottomnav_input {
+    background-color: #555 !important; // Input fon rangi
+    color: #fff !important; // Input text rangi oq
+  }
+
+  .bottomnav_item a {
+    color: #fff !important; // Navbar ichidagi linklar rangi oq
+  }
+
+  .switch.active .circle {
+    background-color: #fff; // Tugma aylana rangi oq
+  }
+  .about_left {
+    background-color: #fff;
+    button {
+      color: black;
+    }
+  }
 }
 
 * {

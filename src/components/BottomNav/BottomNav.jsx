@@ -1,19 +1,40 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import { NavLink } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // i18n kutubxonasini import qilish
-
+import { useTranslation } from "react-i18next";
+import { WbSunny, NightlightRound } from "@mui/icons-material"; // Material UI'dan ikona
 import "./bottomNav.scss";
 import search from "../../assets/img/search.svg";
 import time from "../../assets/img/time.svg";
 import tel from "../../assets/img/tel.svg";
-import sun from "../../assets/img/sunIcon.png";
 import like from "../../assets/img/likeIcon.svg";
 
 const BottomNav = () => {
+  const [isDark, setIsDark] = useState(false);
+  const [inputDarkMode, setInputDarkMode] = useState(false);
+
+  // Dark mode uchun funksiyani aniqlash
+  const handleDark = () => {
+    setIsDark(!isDark);
+  };
+
+  useEffect(() => {
+    const con = document.getElementById("routes");
+    if (isDark) {
+      con.classList.add("darkmode");
+    } else {
+      con.classList.remove("darkmode");
+    }
+  }, [isDark]);
+
+  // Input uchun dark mode
+  const handleInputDarkMode = () => {
+    setInputDarkMode(!inputDarkMode);
+  };
+
   const inputEl = useRef(null);
   let typed = useRef(null);
-  const { t } = useTranslation(); // i18n funksiyasini olish
+  const { t } = useTranslation();
 
   useEffect(() => {
     const options = {
@@ -26,7 +47,7 @@ const BottomNav = () => {
     typed.current = new Typed(inputEl.current, options);
 
     return () => {
-      typed.current.destroy(); // Component unmounted bo'lganda o'chirish
+      typed.current.destroy();
     };
   }, [t]);
 
@@ -58,32 +79,43 @@ const BottomNav = () => {
             </li>
           </ul>
           <form className="bottomnav_form">
-            <img src={search} alt="" className="bottomnav_form_img" />
+            <img src={search} alt="Search" className="bottomnav_form_img" />
             <input
               type="text"
-              className="bottomnav_input"
+              className={`bottomnav_input ${inputDarkMode ? "darkmode" : ""}`}
               ref={inputEl}
-              placeholder={t("placeholder")} // placeholder uchun tarjima
+              placeholder={t("placeholder")}
+              onClick={handleInputDarkMode}
             />
           </form>
         </div>
         <div className="bottomnav_right">
           <div className="bottomnav_contact">
             <div className="bottomnav_card">
-              <img src={time} alt="" className="bottomnav_icon" />
+              <img src={time} alt="Time" className="bottomnav_icon" />
               <h4 className="bottomnav_title">{t("time")}</h4>
             </div>
             <div className="bottomnav_card">
-              <img src={tel} alt="" className="bottomnav_icon" />
+              <img src={tel} alt="Telephone" className="bottomnav_icon" />
               <h4 className="bottomnav_title">
                 <a href="tel:+998 55 201 90 10">+998 55 201 90 10</a>
               </h4>
             </div>
           </div>
           <div className="bottomnav_modes">
-            <img src={sun} alt="" className="bottomnav_mode" />
+            <div className="dark_mode_switch" onClick={handleDark}>
+              {isDark ? (
+                <NightlightRound style={{ color: "#757575" }} /> // Moon icon (tun rejimi)
+              ) : (
+                <WbSunny style={{ color: "#FFC107" }} /> // Sun icon (kun rejimi)
+              )}
+            </div>
             <NavLink to={"/likes"}>
-              <img src={like} alt="" className="bottomnav_mode" />
+              <img
+                src={like}
+                alt="Like"
+                className={`bottomnav_mode ${isDark ? "darkmode_icon" : ""}`}
+              />
             </NavLink>
           </div>
         </div>

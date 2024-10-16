@@ -1,4 +1,7 @@
 .bottomnav {
+  position: sticky;
+  top: 0;
+  z-index: 100000;
   width: 100%;
   background-color: rgb(39, 52, 58);
   &_wrapper {
@@ -93,6 +96,7 @@
   &_mode {
     width: 22px;
     cursor: pointer;
+    fill: white;
   }
   &_mode:nth-child(1) {
     background: #03161d !important;
@@ -116,11 +120,59 @@
   50% {
     box-shadow: 0 0 10px 10px #4e7cf0;
     background-color: #162d38;
-
   }
   to {
     box-shadow: 0 0 10px -10px #4e7cf0;
     background-color: #1a313f;
+  }
+}
 
+.dark_mode_switch {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+
+  .switch {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: background-color 0.3s ease;
+
+    &.active {
+      background-color: #000;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      transition: left 0.3s ease;
+
+      .switch.active & {
+        left: calc(100% - 25px);
+      }
+    }
+  }
+}
+
+/* bottomNav.scss */
+.bottomnav_input {
+  transition: background-color 0.5s ease, color 0.5s ease;
+
+  &.darkmode {
+    background-color: #333;
+    color: #fff;
   }
 }

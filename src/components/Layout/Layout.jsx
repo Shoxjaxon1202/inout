@@ -6,7 +6,7 @@ import Router from "../../Router/Router";
 
 const Layout = () => {
   return (
-    <div className="layout">
+    <div className="layout" id="layout">
       <Navbar />
       <BottomNav />
       <div id="routes" className="routes">
