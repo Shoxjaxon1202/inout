@@ -10,12 +10,21 @@ import tel from "../../assets/img/tel.svg";
 import like from "../../assets/img/likeIcon.svg";
 
 const BottomNav = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    // Foydalanuvchining oxirgi dark mode holatini localStorage'dan olish
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true"; // localStorage'dan keladigan qiymat string bo'lgani uchun true/false qilib olish kerak
+  });
+
   const [inputDarkMode, setInputDarkMode] = useState(false);
 
   // Dark mode uchun funksiyani aniqlash
   const handleDark = () => {
-    setIsDark(!isDark);
+    setIsDark((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", newMode); // Tanlangan dark mode holatini saqlash
+      return newMode;
+    });
   };
 
   useEffect(() => {

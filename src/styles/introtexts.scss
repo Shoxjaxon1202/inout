@@ -64,7 +64,6 @@
   }
 
   .form-overlay {
-    
     position: fixed; /* Yopish uchun */
     top: 80px;
     left: 0;
@@ -74,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Ustiga chiqishi uchun */
+    z-index: 100000; /* Ustiga chiqishi uchun */
   }
 
   .form-container {
@@ -147,7 +146,7 @@
   margin-top: 10px !important;
 }
 
-#yuborish{
+#yuborish {
   position: relative;
   right: 0;
 }
