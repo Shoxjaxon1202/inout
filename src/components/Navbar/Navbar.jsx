@@ -7,7 +7,7 @@ import lang1 from "../../assets/img/langUzb.png";
 import lang2 from "../../assets/img/langEng.png";
 import lang3 from "../../assets/img/langRus.png";
 import telegram from "../../assets/img/telegram.svg";
-import download from "../../assets/img/download.svg";
+import downloadFile from "../../assets/img/download.svg"; // Faylni yuklash
 import ariza from "../../assets/img/ariza.svg";
 
 import "./navbar.scss";
@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   const handleTelegramClick = () => {
-    const telegramLink = "https://t.me/Shox_X7";
+    const telegramLink = "https://t.me/abdusalimov_shoxjaxon";
     window.open(telegramLink, "_blank");
   };
 
@@ -47,16 +47,20 @@ const Navbar = () => {
               target="_blank"
               className="link-btn one">
               <img src={telegram} alt="telegram" width="20" height="20" />
-              <p className="link-text">{t("telegram")}</p>
+              <span className="link-text">{t("telegram")}</span>
             </NavLink>
-            <button className="link-btn three" onClick={handleTelegramClick}>
-              <img src={download} alt="download" width="20" height="20" />
-              <p className="link-text">{t("download")}</p>
-            </button>
-            <NavLink to="#registration" className="link-btn three">
-              <img src={ariza} alt="download" width="20" height="20" />
-              <p className="link-text">{t("apply")}</p>
-            </NavLink>
+
+            {/* Fayl yuklash */}
+            <a href={downloadFile} download className="link-btn two">
+              <img src={downloadFile} alt="download" width="20" height="20" />
+              <span className="link-text">{t("download")}</span>
+            </a>
+
+            {/* mailto orqali ariza yuborish */}
+            <a onClick={handleTelegramClick} className="link-btn three">
+              <img src={ariza} alt="ariza" width="20" height="20" />
+              <span className="link-text">{t("apply")}</span>
+            </a>
           </div>
         </div>
         <div className="navbar_right">
