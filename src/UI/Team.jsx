@@ -16,6 +16,7 @@ import rasm6 from "../assets/img/qizlar6.jpg";
 import { useTranslation } from "react-i18next";
 import "../styles/team.scss";
 import { Instagram, Phone, Telegram } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 
 const teamMembers = [
   {
@@ -61,9 +62,9 @@ export default function Team() {
             <h2 className="team_title">{t("team_title")}</h2>
             <p className="team_text">{t("team_text")}</p>
           </div>
-          <a href="./allteam">
+          <NavLink to="/allteam">
             <button className="video_btn">{t("view_full_list")}</button>
-          </a>
+          </NavLink>
         </div>
 
         <Swiper

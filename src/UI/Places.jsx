@@ -15,6 +15,7 @@ import rasm11 from "../assets/img/place4.png"; // O'zgaruvchilarni to'ldiring
 
 import "../styles/places.scss";
 import Videos from "./Videos";
+import { NavLink } from "react-router-dom";
 
 const Places = () => {
   const { t } = useTranslation(); // useTranslation dan t funksiyasini chaqiramiz
@@ -85,9 +86,9 @@ const Places = () => {
         <div className="video">
           <div className="video_top">
             <h3 className="video_title">{t("video")}</h3>
-            <a href="./videos">
+            <NavLink to="/videos">
               <button className="video_btn btn">{t("all_videos")}</button>
-            </a>
+            </NavLink>
           </div>
           <Videos />
         </div>
