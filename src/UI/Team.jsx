@@ -61,9 +61,9 @@ export default function Team() {
             <h2 className="team_title">{t("team_title")}</h2>
             <p className="team_text">{t("team_text")}</p>
           </div>
-          <button className="video_btn">
-            <a href="/allteam">{t("view_full_list")}</a>
-          </button>
+          <a href="./allteam">
+            <button className="video_btn">{t("view_full_list")}</button>
+          </a>
         </div>
 
         <Swiper

@@ -85,7 +85,7 @@ const Places = () => {
         <div className="video">
           <div className="video_top">
             <h3 className="video_title">{t("video")}</h3>
-            <a href="/videos">
+            <a href="./videos">
               <button className="video_btn btn">{t("all_videos")}</button>
             </a>
           </div>

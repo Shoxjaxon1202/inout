@@ -6,7 +6,7 @@
 
 .darkmode {
   background: #fff !important; // Tun rejimi uchun fon rangi
-  color: #2a3437 !important; // Text rangi oq
+  color: black !important; // Text rangi oq
 
   a {
     color: rgb(27, 25, 25) !important; // Contact bo'limidagi matn rangi oq
@@ -19,7 +19,8 @@
   h5,
   p,
   a {
-    color: rgb(27, 25, 25) !important; // Contact bo'limidagi matn rangi oq
+    // color: rgb(27, 25, 25) !important; // Contact bo'limidagi matn rangi oq
+    color: black !important;
   }
   .do,
   .team,
@@ -27,10 +28,14 @@
   .mijozlar,
   .contact-page,
   .statistics-container,
-  .comments,
   .footer,
   .about,
   .vakansiya {
+    button {
+      &:hover {
+        color: black;
+      }
+    }
     input,
     textarea {
       background-color: #fff;
@@ -42,8 +47,47 @@
       background-color: #fff !important;
     }
   }
-  .place_card{
-    color: #18262f;
+
+  button {
+    &:hover {
+      color: black;
+    }
+  }
+  .comments {
+    background-color: #fff;
+    button {
+      &:hover {
+        color: black;
+      }
+    }
+
+    input,
+    textarea {
+      background-color: #fff;
+      border: 1px solid;
+      color: black;
+    }
+
+    &__modal-content {
+      background-color: #fff;
+    }
+    &__modal-close {
+      color: black;
+    }
+    &__item {
+      background-color: #fff;
+    }
+  }
+
+  .vakansiya {
+    button {
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  .place_card {
+    color: black;
   }
   .bottomnav_input {
     background-color: #555 !important; // Input fon rangi
@@ -53,14 +97,34 @@
   .bottomnav_item a {
     color: #fff !important; // Navbar ichidagi linklar rangi oq
   }
+  .form-overlay {
+    div {
+      background-color: #fff;
 
+      input {
+        background-color: white;
+        border: 1px solid;
+        color: black;
+      }
+      button {
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+  label {
+    color: black;
+  }
   .switch.active .circle {
     background-color: #fff; // Tugma aylana rangi oq
   }
   .about_left {
     background-color: #fff;
     button {
-      color: black;
+      &:hover {
+        color: black;
+      }
     }
   }
 }

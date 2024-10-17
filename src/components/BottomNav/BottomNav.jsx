@@ -57,7 +57,7 @@ const BottomNav = () => {
         <div className="bottomnav_left">
           <ul className="bottomnav_list">
             <li className="bottomnav_item">
-              <NavLink to={"/home"}>{t("asosiy")}</NavLink>
+              <NavLink to={"/"}>{t("asosiy")}</NavLink>
             </li>
             <li className="bottomnav_item">
               <NavLink to={"/services"}>{t("xizmatlar")}</NavLink>
