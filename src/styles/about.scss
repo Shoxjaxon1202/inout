@@ -28,7 +28,7 @@
     max-width: 254px;
     padding: 14px 0;
     width: 100%;
-    &_display{
+    &_display {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -72,6 +72,7 @@
   &_box {
     width: 30%;
     &_title {
+      width: 200px;
       color: #fff;
       font-family: "Unbounded";
       font-size: 32px;
